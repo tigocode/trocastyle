@@ -7,7 +7,13 @@ export default function Home() {
   const [ cordoFundo, setCordoFundo ] =  useState(styles.bg_vermelho);
 
   function alterarEstilo() {
-    setCordoFundo(styles.bg_azul);
+    if(status === false) {
+      setCordoFundo(styles.bg_azul);
+      setStatus(true);
+    } else {
+      setCordoFundo(styles.bg_vermelho);
+      setStatus(false);
+    }
   };
 
   return (
